@@ -35,7 +35,17 @@ print()
 
 # Splitting for the Genres Data
 genres_data = main_data.loc[:, ["Movies", "Genres"]]
-print(genres_data.loc[0,:])
+
+temp = pd.DataFrame(columns=["Movies", "Genres"])
+
+print(genres_data.values)
+
+for i in genres_data.values:
+    temp["Movies"] = [k for k in i[0]]
+    # temp["Genres"] = eval(i[1])
+
+print(temp)
+# print(genres_data.loc[0,:])
 
 
 # One time run to create files
